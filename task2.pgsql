@@ -5,7 +5,7 @@ CREATE TABLE book (
     page_count INT
 );
 
-Заполнение таблицы book 
+-- Заполнение таблицы book 
 INSERT INTO book (author, title, page_count)
 VALUES
     ('Джамбул Джабаев', 'Ленинградцы, дети мои!', 200),
@@ -24,7 +24,7 @@ CREATE TABLE publisher (
     name VARCHAR(255) NOT NULL,
     city VARCHAR(255)
 );
-Заполнение таблицы publisher
+-- Заполнение таблицы publisher
 INSERT INTO publisher (name, city)
 VALUES
     ('Самрук', 'Астана'),
