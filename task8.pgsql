@@ -1,0 +1,36 @@
+-- CREATE OR REPLACE FUNCTION get_average_price()
+-- RETURNS numeric AS $$
+-- BEGIN
+--     RETURN COALESCE(
+--         (SELECT AVG(unit_price) FROM products),
+--         0
+--     );
+-- END;
+-- $$ LANGUAGE plpgsql;
+-- SELECT get_average_price();
+
+-- SELECT * FROM products
+-- SELECT * FROM employees 
+-- CREATE OR REPLACE FUNCTION get_youngest_and_oldest_employee()
+-- RETURNS TABLE (
+--     youngest_employee_first_name VARCHAR,
+--     youngest_employee_last_name VARCHAR,
+--     youngest_employee_birth_date DATE,
+--     oldest_employee_first_name VARCHAR,
+--     oldest_employee_last_name VARCHAR,
+--     oldest_employee_birth_date DATE
+-- ) AS $$
+-- BEGIN
+--     RETURN QUERY (
+--         SELECT
+--             (SELECT first_name FROM employees ORDER BY birth_date ASC LIMIT 1),
+--             (SELECT last_name FROM employees ORDER BY birth_date ASC LIMIT 1),
+--             (SELECT birth_date FROM employees ORDER BY birth_date ASC LIMIT 1),
+--             (SELECT first_name FROM employees ORDER BY birth_date DESC LIMIT 1),
+--             (SELECT first_name FROM employees ORDER BY birth_date DESC LIMIT 1),
+--             (SELECT birth_date FROM employees ORDER BY birth_date DESC LIMIT 1)
+--     );
+-- END;
+-- $$ LANGUAGE plpgsql;
+
+-- SELECT * FROM get_youngest_and_oldest_employee();
